@@ -34,6 +34,7 @@ function CustomerEdit() {
 
   const onFinish = async (values: UsersInterface) => {
     values.ID = user?.ID;
+    values.Profile = user?.Profile;
     let res = await UpdateUser(values);
     if (res.status) {
       messageApi.open({
@@ -68,6 +69,7 @@ function CustomerEdit() {
         FirstName: res.data.FirstName,
         LastName: res.data.LastName,
         GenderID: res.data.GenderID,
+        Proflie: res.data.Profile,
         Email: res.data.Email,
         Phone: res.data.Phone,
         LinkedIn: res.data.LinkedIn,
